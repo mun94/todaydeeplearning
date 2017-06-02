@@ -7,6 +7,9 @@ class ArvixPapersController < ApplicationController
       @arvix_papers = ArvixPaper.includes(:authors, :votes_for)
                                 .latest(params[:category])
                                 .page(params[:page])
+    elsif params[:top_authors]
+      @arvix_papers = ArvixPaper.includes(:authors, :votes_for)
+                                
     else
       @arvix_papers = ArvixPaper.includes(:authors, :votes_for)
                                 .within(params[:period], params[:category])
