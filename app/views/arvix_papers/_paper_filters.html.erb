@@ -28,7 +28,7 @@
   </div>
 
   <div class="paper-filters__item">
-    <%= link_to "Top Authors", arvix_papers_path(latest: 1, category: params[:category]), class: "paper-filters__link #{'paper-filters__link--active' if params[:latest].present?}" %>
+    <%= link_to "Top Authors",  arvix_papers_path(period: 'top_authors', category: params[:category]), class: "paper-filters__link #{'paper-filters__link--active' if params[:period] == 'top_authors'}" %>
   </div>
 
 </div>
